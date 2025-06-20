@@ -49,6 +49,3 @@
 [submodule "pack/plugins/start/plenary"]
 	path = pack/plugins/start/plenary
 	url = https://github.com/nvim-lua/plenary.nvim
-[submodule "pack/plugins/start/nvim-metals"]
-	path = pack/plugins/start/nvim-metals
-	url = https://github.com/scalameta/nvim-metals.git
