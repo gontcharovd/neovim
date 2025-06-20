@@ -114,3 +114,27 @@ nmap <leader>r :Ranger<CR>
 
 " nvim tab confirm autocomplete
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<TAB>"
+
+" nvim metals
+lua << EOF
+-- Minimal nvim-metals setup
+local metals_config = require("metals").bare_config()
+
+-- Basic on_attach function
+metals_config.on_attach = function(client, bufnr)
+  -- Add basic keymaps (customize as needed)
+  vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr })
+  vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr })
+  vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr })
+end
+
+-- Auto-start metals for Scala files
+local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "scala", "sbt", "java" },
+  callback = function()
+    require("metals").initialize_or_attach(metals_config)
+  end,
+  group = nvim_metals_group,
+})
+EOF
