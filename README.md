@@ -1,9 +1,8 @@
 ### Installation
 
 ```
-git clone https://github.com/gontcharovd/vim.git ~/.vim
-ln -s ~/.vim/vimrc ~/.vimrc
-cd ~/.vim
+git clone https://github.com/gontcharovd/neovim.git ~/.config/neovim
+cd ~/.config/neovim
 git submodule update --init
 ```
 
