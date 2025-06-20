@@ -46,3 +46,6 @@
 [submodule "pack/plugins/start/nordtheme"]
 	path = pack/plugins/start/nordtheme
 	url = https://github.com/nordtheme/vim.git
+[submodule "pack/plugins/start/plenary"]
+	path = pack/plugins/start/plenary
+	url = https://github.com/nvim-lua/plenary.nvim
