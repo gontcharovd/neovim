@@ -1,0 +1,13 @@
+{
+	"python.linting.pylintEnabled": false,
+	"python.linting.flake8Enabled": true,
+	"pyright.disableOrganizeImports": false,
+	"python.analysis.autoImportCompletions": false,
+	"python.analysis.typeCheckingMode": "basic",
+	"python.analysis.autoSearchPaths": true,
+	"python.analysis.diagnosticMode": "workspace",
+	"python.analysis.stubPath": "",
+	"python.analysis.typeshedPaths": [],
+	"python.analysis.useLibraryCodeForTypes": false,
+	"python.analysis.completeFunctionParens": false
+}
