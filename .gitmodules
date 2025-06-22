@@ -52,3 +52,6 @@
 [submodule "pack/plugins/start/nvim-metals"]
 	path = pack/plugins/start/nvim-metals
 	url = https://github.com/scalameta/nvim-metals.git
+[submodule "pack/plugins/start/vim-suda"]
+	path = pack/plugins/start/vim-suda
+	url = https://github.com/lambdalisue/vim-suda.git
