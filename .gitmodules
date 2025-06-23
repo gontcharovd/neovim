@@ -55,3 +55,15 @@
 [submodule "pack/plugins/start/vim-suda"]
 	path = pack/plugins/start/vim-suda
 	url = https://github.com/lambdalisue/vim-suda.git
+[submodule "pack/plugins/start/fidget.nvim"]
+	path = pack/plugins/start/fidget.nvim
+	url = https://github.com/j-hui/fidget.nvim.git
+[submodule "pack/plugins/start/nvim-cmp"]
+	path = pack/plugins/start/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp.git
+[submodule "pack/plugins/start/cmp-nvim-lsp"]
+	path = pack/plugins/start/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp.git
+[submodule "pack/plugins/start/nvim-dap"]
+	path = pack/plugins/start/nvim-dap
+	url = https://github.com/mfussenegger/nvim-dap.git

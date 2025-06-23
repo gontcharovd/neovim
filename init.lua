@@ -172,3 +172,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   group = nvim_metals_group,
 })
+
+-- Import config
+require('metals-config')
