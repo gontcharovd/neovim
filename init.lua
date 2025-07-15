@@ -49,7 +49,7 @@ vim.keymap.set('n', '<leader>l', ':wincmd l<CR>', { silent = true })
 
 -- Window management
 vim.keymap.set('n', '<leader>x', ':close<CR>', { silent = true })
-vim.keymap.set('n', '<leader>d', ':bp\\|bd #<CR>', { silent = true })
+-- vim.keymap.set('n', '<leader>d', ':bp\\|bd #<CR>', { silent = true })
 
 -- File navigation and completion
 vim.opt.path:append('**')
@@ -119,13 +119,13 @@ vim.o.compatible = false
 vim.keymap.set('n', '<leader>r', ':Ranger<CR>', { silent = true })
 
 -- COC tab completion
-vim.keymap.set('i', '<TAB>', function()
-  if vim.fn['coc#pum#visible']() == 1 then
-    return vim.fn['coc#pum#confirm']()
-  else
-    return vim.api.nvim_replace_termcodes('<C-g>u<TAB>', true, true, true)
-  end
-end, { silent = true, expr = true })
+-- vim.keymap.set('i', '<TAB>', function()
+--   if vim.fn['coc#pum#visible']() == 1 then
+--     return vim.fn['coc#pum#confirm']()
+--   else
+--     return vim.api.nvim_replace_termcodes('<C-g>u<TAB>', true, true, true)
+--   end
+-- end, { silent = true, expr = true })
 
 -- User commands
 vim.api.nvim_create_user_command('MakeTags', '!ctags -R .', {})
@@ -171,6 +171,21 @@ vim.api.nvim_create_autocmd("FileType", {
     require("metals").initialize_or_attach(metals_config)
   end,
   group = nvim_metals_group,
+})
+
+-- Auto-show diagnostics in floating window
+vim.api.nvim_create_autocmd('CursorHold', {
+  callback = function()
+    local opts = {
+      focusable = false,
+      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+      border = 'rounded',
+      source = 'always',
+      prefix = ' ',
+      scope = 'cursor',
+    }
+    vim.diagnostic.open_float(nil, opts)
+  end
 })
 
 -- Import config
