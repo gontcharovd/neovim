@@ -56,13 +56,13 @@ vim.opt.path:append('**')
 vim.o.wildmenu = true
 
 -- File operations
-vim.keymap.set('n', '<leader>f', ':Files<CR>', { silent = true })
+vim.keymap.set('n', '<leader>p', ':Files<CR>', { silent = true })
 vim.keymap.set('n', '<leader>b', ':Buffers<CR>', { silent = true })
 vim.keymap.set('n', '<leader><S-f>', ':edit.<CR>', { silent = true })
 
 -- Location list navigation
-vim.keymap.set('n', '<leader>n', ':lnext<CR>', { silent = true })
-vim.keymap.set('n', '<leader>p', ':lprev<CR>', { silent = true })
+vim.keymap.set('n', ']l', ':lnext<CR>', { silent = true })
+vim.keymap.set('n', '[l', ':lprev<CR>', { silent = true })
 
 -- Copy/paste mappings
 vim.keymap.set('v', '<C-c>', '"+y')
@@ -98,7 +98,6 @@ vim.keymap.set('x', '&', ':&&<CR>')
 vim.keymap.set('n', '<leader>s', ':update<CR>', { silent = true })
 vim.keymap.set('n', '<leader>e', ':edit!<CR>', { silent = true })
 vim.keymap.set('n', '<leader>w', ':w !sudo tee % > /dev/null<CR>', { silent = true })
-vim.keymap.set('n', '<leader>p', ':!pandoc -i % --toc -o %<.pdf --pdf-engine=xelatex<CR>', { silent = true })
 
 -- Command abbreviations
 vim.cmd('cnoreabbrev H vert h')
