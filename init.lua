@@ -117,14 +117,31 @@ vim.o.compatible = false
 -- Ranger mapping
 vim.keymap.set('n', '<leader>r', ':Ranger<CR>', { silent = true })
 
--- COC tab completion
--- vim.keymap.set('i', '<TAB>', function()
---   if vim.fn['coc#pum#visible']() == 1 then
---     return vim.fn['coc#pum#confirm']()
---   else
---     return vim.api.nvim_replace_termcodes('<C-g>u<TAB>', true, true, true)
---   end
--- end, { silent = true, expr = true })
+-- COC tab completion - cycling through options
+vim.keymap.set('i', '<TAB>', function()
+  if vim.fn['coc#pum#visible']() == 1 then
+    return vim.fn['coc#pum#next'](1)
+  else
+    return vim.api.nvim_replace_termcodes('<TAB>', true, true, true)
+  end
+end, { silent = true, expr = true })
+
+vim.keymap.set('i', '<S-TAB>', function()
+  if vim.fn['coc#pum#visible']() == 1 then
+    return vim.fn['coc#pum#prev'](1)
+  else
+    return vim.api.nvim_replace_termcodes('<S-TAB>', true, true, true)
+  end
+end, { silent = true, expr = true })
+
+-- Enter to confirm selection
+vim.keymap.set('i', '<CR>', function()
+  if vim.fn['coc#pum#visible']() == 1 then
+    return vim.fn['coc#pum#confirm']()
+  else
+    return vim.api.nvim_replace_termcodes('<CR>', true, true, true)
+  end
+end, { silent = true, expr = true })
 
 -- User commands
 vim.api.nvim_create_user_command('MakeTags', '!ctags -R .', {})

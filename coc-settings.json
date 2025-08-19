@@ -9,5 +9,8 @@
 	"python.analysis.stubPath": "",
 	"python.analysis.typeshedPaths": [],
 	"python.analysis.useLibraryCodeForTypes": false,
-	"python.analysis.completeFunctionParens": false
+	"python.analysis.completeFunctionParens": false,
+  "pyright.inlayHints.functionReturnTypes": false,
+  "pyright.inlayHints.variableTypes": false,
+  "pyright.inlayHints.parameterTypes": false
 }
